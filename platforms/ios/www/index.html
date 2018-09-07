@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+    <html>
+    <head> 
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+      <meta name="apple-mobile-web-app-capable" content="yes">
+      <meta name="apple-mobile-web-app-status-bar-style" content="black">
+      <title>My App</title>
+      <link rel="stylesheet" href="css/framework7.ios.min.css">
+      <link rel="stylesheet" href="css/framework7.ios.colors.min.css">
+      <link rel="stylesheet" href="css/app.css">
+    </head>
+    <body>
+      <div id="app">
+        <f7-statusbar></f7-statusbar>
+        <f7-views>
+          <f7-view id="main-view" navbar-through :dynamic-navbar="true" main>
+            <f7-navbar back-link="Back" sliding>
+              <f7-nav-center sliding>Input your name:</f7-nav-center>
+            </f7-navbar>
+
+            <f7-pages>
+              <f7-page>
+                <f7-list>
+                  </f7-list-item>
+                    <f7-list-item>    
+                      <f7-input type="text" v-model:value="name" placeholder="Your name" clear-button></f7-input>
+                    </f7-list-item>
+                  </f7-list-item>
+                   <img src="img/cam2.jpg" id='img' style="width: 100px; height: 100px;">
+                  <f7-list-button v-on:click="getImage">Load image</f7-list-button>
+                  <f7-list-button v-on:click="enterChat">Enter Chat</f7-list-button>
+                </f7-list>
+              </f7-page>
+            </f7-pages>
+          </f7-view>
+        </f7-views>
+      </div>
+      <template id="page-chat">
+        <f7-page>
+          <f7-messages>
+            <f7-message v-for="msg in msgs" :name="msg.name" :text="msg.text" :type="msg.type">
+          </f7-message>
+          </f7-messages>
+            <f7-messagebar placeholder="type message" send-link="Send" v-on:submit="onSend" >
+          </f7-messagebar>
+        </f7-page>
+      </template>
+
+    <!-- Add CDN for Pusher and Axios -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script> 
+      <script src="https://js.pusher.com/4.1/pusher.min.js"></script>
+
+      <script src="cordova.js"></script>
+      <script src="js/framework7.min.js"></script>
+      <script src="js/vue.min.js"></script>
+      <script src="js/framework7-vue.min.js"></script>
+      <script src="js/app.js"></script>
+    </body>
+    </html>

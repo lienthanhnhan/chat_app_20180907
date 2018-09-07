@@ -1,0 +1,23 @@
+{
+  "name": "com.phonegap.helloworld",
+  "version": "1.0.0",
+  "displayName": "helloworld",
+  "cordova": {
+    "platforms": [
+      "ios",
+      "android"
+    ],
+    "plugins": {
+      "cordova-plugin-whitelist": {},
+      "cordova-plugin-keyboard": {},
+      "cordova-plugin-camera": {}
+    }
+  },
+  "dependencies": {
+    "cordova-android": "~7.0.0",
+    "cordova-ios": "~4.5.5",
+    "cordova-plugin-camera": "^4.0.3",
+    "cordova-plugin-keyboard": "~1.2.0",
+    "cordova-plugin-whitelist": "1"
+  }
+}
